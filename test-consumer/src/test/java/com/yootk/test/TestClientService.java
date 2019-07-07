@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = "classpath:spring/spring-base.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestClientService {
-    @Reference
+    @Reference(check = false)
     private IClientService clientService ;
     @Test
     public void testGet() {

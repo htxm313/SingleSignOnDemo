@@ -1,6 +1,7 @@
 package com.yootk.oauth.realm;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.yootk.oauth.service.IOAuthService;
 import com.yootk.service.IMemberService;
 import com.yootk.service.IRoleAndActionService;
 import com.yootk.vo.Member;
@@ -9,21 +10,22 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
 import java.util.Set;
 
 // 此处不使用扫描配置，通过bean配置文件的模式来完成
 public class MemberRealm extends AuthorizingRealm {
-    @Reference
-    private IMemberService memberService ;
+    @Autowired
+    private IOAuthService oAuthService ;
     @Reference
     private IRoleAndActionService memberPrivilegeService ;
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         System.err.println("【1】｛MemberRealm｝============== 用户认证处理 ==============");
         String mid = (String) token.getPrincipal() ;
-        Member member = this.memberService.get(mid) ; // 根据mid查询用户信息
+        Member member = this.oAuthService.getMember(mid) ; // 根据mid查询用户信息
         if (member == null) {   // 用户信息不存在
             throw new UnknownAccountException(mid + "账户信息不存在！") ;
         }
