@@ -11,7 +11,7 @@
 ${errors == 'org.apache.shiro.authc.UnknownAccountException'?"未知的账户异常！" : ""}
 ${errors == 'org.apache.shiro.authc.IncorrectCredentialsException'?"错误的用户名或密码！" : ""}
 ${errors == 'org.apache.shiro.authc.LockedAccountException'?"账户已锁定！" : ""}
-${errors == 'com.yootk.ssm.filter.authc.exception.RandomCodeException'?"验证码输入错误！" : ""}
+${errors == 'com.yootk.oauthth.filter.authc.exception.RandomCodeException'?"验证码输入错误！" : ""}
 ${errors == 'org.apache.shiro.authc.ExcessiveAttemptsException'?"密码尝试次数过多，为了安全，暂时锁定账户！" : ""}
 <form action="<%=LOGIN_URL%>" method="post">
     用户名：<input type="text" name="mid" id="mid"><br>

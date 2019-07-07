@@ -15,7 +15,7 @@
     </bean>
     <!-- 2、追加一个映射配置转换的处理工具类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.yootk.ssm.dao"/>    <!-- DAO接口所在包名称 -->
+        <property name="basePackage" value="com.yootk.oauth.dao"/>    <!-- DAO接口所在包名称 -->
         <property name="sqlSessionFactoryBeanName" value="sessionFactory"/> <!-- SessionFactory-Bean名称 -->
     </bean>
 </beans>

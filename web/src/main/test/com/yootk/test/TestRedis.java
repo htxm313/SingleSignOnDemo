@@ -1,6 +1,6 @@
 package com.yootk.test;
 
-import com.yootk.ssm.util.cache.RedisCache;
+import com.yootk.oauth.util.cache.RedisCache;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

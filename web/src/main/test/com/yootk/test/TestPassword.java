@@ -1,6 +1,6 @@
 package com.yootk.test;
 
-import com.yootk.ssm.util.EncryptUtil;
+import com.yootk.oauth.util.EncryptUtil;
 
 import java.io.Serializable;
 import java.util.Deque;

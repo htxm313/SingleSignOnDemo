@@ -9,7 +9,7 @@
             https://www.springframework.org/schema/context/spring-context.xsd
             http://www.springframework.org/schema/mvc
             https://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    <context:component-scan base-package="com.yootk.ssm.action"/>
+    <context:component-scan base-package="com.yootk.oauth.action"/>
     <mvc:annotation-driven/>    <!-- 启用控制层的注解配置模式 -->
     <mvc:default-servlet-handler/>  <!-- 使用之前配置的DispatcherServlet类处理请求 -->
     <!-- 定义一个页面资源解析的处理类，该类的主要功能是匹配路径的前缀与后缀 -->
