@@ -19,6 +19,8 @@
     </bean>
     <!-- 为保存在WEB-INF下所有的静态资源设置映射访问路径 -->
     <mvc:resources mapping="/pages/**" location="/WEB-INF/pages/"/>
+    <mvc:resources mapping="/jquery/**" location="/WEB-INF/jquery/"/>
+    <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
 
 
     <!-- 进行上传文件组件的相关配置，配置的是上传文件的解析处理类 -->

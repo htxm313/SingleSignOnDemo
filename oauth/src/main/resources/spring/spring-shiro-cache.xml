@@ -21,6 +21,9 @@
     <bean id="authcodeRedisCache" class="com.yootk.oauth.util.cache.RedisCache">
         <property name="redisConnectionFactory" ref="shiroAuthcodeRedisConnectionFactory"/>
     </bean>
+    <bean id="tokenRedisCache" class="com.yootk.oauth.util.cache.RedisCache">
+        <property name="redisConnectionFactory" ref="shiroTokenRedisConnectionFactory"/>
+    </bean>
     <!-- 定义一个新的Redis缓存管理器，该缓存管理器设置的时候要设置有若干个RedisCache对象，以及对应的缓存名成 -->
     <bean id="cacheManager" class="com.yootk.oauth.util.cache.manager.RedisCacheManager">
         <property name="cacheManagerMap">
@@ -31,6 +34,7 @@
                 <entry key="retryCache" value-ref="retryRedisCache"/>
                 <entry key="kickoutCache" value-ref="kickoutRedisCache"/>
                 <entry key="authcodeCache" value-ref="authcodeRedisCache"/>
+                <entry key="tokenCache" value-ref="tokenRedisCache"/>
             </map>
         </property>
     </bean>
